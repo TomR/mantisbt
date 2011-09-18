@@ -96,12 +96,12 @@ print_manage_menu( 'manage_proj_edit_page.php' );
 			<legend><span><?php echo lang_get( 'edit_project_title' ) ?></span></legend>
 			<?php echo form_security_field( 'manage_proj_update' ) ?>
 			<input type="hidden" name="project_id" value="<?php echo $f_project_id ?>" />
-			<div class="field-container <?php echo helper_alternate_class_no_attribute() ?>">
+			<div class="field-container">
 				<label for="project-name"><span><?php echo lang_get( 'project_name' ) ?></span></label>
 				<span class="input"><input type="text" id="project-name" name="name" size="50" maxlength="128" value="<?php echo string_attribute( $row['name'] ) ?>" /></span>
 				<span class="label-style"></span>
 			</div>
-			<div class="field-container <?php echo helper_alternate_class_no_attribute(); ?>">
+			<div class="field-container">
 				<label for="project-status"><span><?php echo lang_get( 'status' ) ?></span></label>
 				<span class="select">
 					<select id="project-status" name="status">
@@ -110,17 +110,17 @@ print_manage_menu( 'manage_proj_edit_page.php' );
 				</span>
 				<span class="label-style"></span>
 			</div>
-			<div class="field-container <?php echo helper_alternate_class_no_attribute(); ?>">
+			<div class="field-container">
 				<label for="project-enabled"><span><?php echo lang_get( 'enabled' ) ?></span></label>
 				<span class="checkbox"><input type="checkbox" id="project-enabled" name="enabled" <?php check_checked( $row['enabled'], ON ); ?> /></span>
 				<span class="label-style"></span>
 			</div>
-			<div class="field-container <?php echo helper_alternate_class_no_attribute(); ?>">
+			<div class="field-container">
 				<label for="project-inherit-global"><span><?php echo lang_get( 'inherit_global' ) ?></span></label>
 				<span class="checkbox"><input type="checkbox" id="project-inherit-global" name="inherit_global" <?php check_checked( $row['inherit_global'], ON ); ?> /></span>
 				<span class="label-style"></span>
 			</div>
-			<div class="field-container <?php echo helper_alternate_class_no_attribute(); ?>">
+			<div class="field-container">
 				<label for="project-view-state"><span><?php echo lang_get( 'view_status' ) ?></span></label>
 				<span class="select">
 					<select id="project-view-state" name="view_state">
@@ -131,13 +131,13 @@ print_manage_menu( 'manage_proj_edit_page.php' );
 			</div>
 			<?php
 			if ( file_is_uploading_enabled() ) { ?>
-			<div class="field-container <?php echo helper_alternate_class_no_attribute(); ?>">
+			<div class="field-container">
 				<label for="project-file-path"><span><?php echo lang_get( 'upload_file_path' ) ?></span></label>
 				<span class="input"><input type="text" id="project-file-path" name="file_path" size="50" maxlength="250" value="<?php echo string_attribute( $row['file_path'] ) ?>" /></span>
 				<span class="label-style"></span>
 			</div><?php
 			} ?>
-			<div class="field-container <?php echo helper_alternate_class_no_attribute(); ?>">
+			<div class="field-container">
 				<label for="project-description"><span><?php echo lang_get( 'description' ) ?></span></label>
 				<span class="textarea"><textarea id="project-description" name="description" cols="60" rows="5"><?php echo string_textarea( $row['description'] ) ?></textarea></span>
 				<span class="label-style"></span>
@@ -164,11 +164,6 @@ if ( access_has_global_level ( config_get( 'delete_project_threshold' ) ) ) { ?>
 	</form>
 </div>
 <?php } ?>
-
-<?php
-	# reset the class counter
-	helper_alternate_class_no_attribute( 0 );
-?>
 
 <!-- SUBPROJECTS -->
 <div id="manage-project-update-subprojects-div" class="form-container">
@@ -574,7 +569,7 @@ if ( $t_can_manage_users ) {
 			<legend><span><?php echo lang_get( 'add_user_title' ) ?></span></legend>
 			<?php echo form_security_field( 'manage_proj_user_add' ) ?>
 			<input type="hidden" name="project_id" value="<?php echo $f_project_id ?>" />
-			<div class="field-container <?php echo helper_alternate_class_no_attribute(); ?>">
+			<div class="field-container">
 				<label for="project-add-users-username"><span><?php echo lang_get( 'username' ) ?></span></label>
 				<span class="select">
 					<select id="project-add-users-username" name="user_id[]" multiple="multiple" size="10"><?php
@@ -585,7 +580,7 @@ if ( $t_can_manage_users ) {
 				</span>
 				<span class="label-style"></span>
 			</div>
-			<div class="field-container <?php echo helper_alternate_class_no_attribute(); ?>">
+			<div class="field-container">
 				<label for="project-add-users-access-level"><span><?php echo lang_get( 'access_level' ) ?></span></label>
 				<span class="select">
 					<select id="project-add-users-access-level" name="access_level"><?php
